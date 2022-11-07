@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>EFTER 모의투자</title>
+</head>
+
+<body>
+    <div id="main" class="container1">
+        <div class="row">
+            <div class="col-12">
+                <img class="img-main" src="character/bank.png" width="50%">
+
+                <h1 class="mt-5">로그인</h1>
+                <br>
+                <div class="mt-4">
+                  ID: <br><input type="text" class="id_data">
+                </div>
+                <br>
+                <button type="button" class="btn" onclick="hrefLink()" style="width: 200px;">투자하러 가기</button>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+        // var userData = {
+        //     "user5321": { "money": 100000000, "team":1, "1":0, "2":0, "3":0, "4":0, "5":0},
+        //     "user1245": { "money": 100000000, "team":1, "1":0, "2":0, "3":0, "4":0, "5":0},
+        //     "user1928": { "money": 100000000, "team":1, "1":0, "2":0, "3":0, "4":0, "5":0},
+        //     "user6273": { "money": 100000000, "team":1, "1":0, "2":0, "3":0, "4":0, "5":0},
+        //     "user1239": { "money": 100000000, "team":1, "1":0, "2":0, "3":0, "4":0, "5":0},
+        //     "user1029": { "money": 100000000, "team":1, "1":0, "2":0, "3":0, "4":0, "5":0},
+        //     "user8371": { "money": 100000000, "team":2, "1":0, "2":0, "3":0, "4":0, "5":0},
+        //     "user1282": { "money": 100000000, "team":2, "1":0, "2":0, "3":0, "4":0, "5":0},
+        //     "user8192": { "money": 100000000, "team":2, "1":0, "2":0, "3":0, "4":0, "5":0},
+        //     "user9112": { "money": 100000000, "team":2, "1":0, "2":0, "3":0, "4":0, "5":0},
+        //     "user1762": { "money": 100000000, "team":2, "1":0, "2":0, "3":0, "4":0, "5":0},
+        //     "user8132": { "money": 100000000, "team":2, "1":0, "2":0, "3":0, "4":0, "5":0},
+        //     "user9182": { "money": 100000000, "team":3, "1":0, "2":0, "3":0, "4":0, "5":0},
+        //     "user1724": { "money": 100000000, "team":3, "1":0, "2":0, "3":0, "4":0, "5":0},
+        //     "user7361": { "money": 100000000, "team":3, "1":0, "2":0, "3":0, "4":0, "5":0},
+        //     "user1123": { "money": 100000000, "team":3, "1":0, "2":0, "3":0, "4":0, "5":0},
+        //     "user1722": { "money": 100000000, "team":3, "1":0, "2":0, "3":0, "4":0, "5":0},
+        //     "user8100": { "money": 100000000, "team":3, "1":0, "2":0, "3":0, "4":0, "5":0},
+        //     "user7126": { "money": 100000000, "team":4, "1":0, "2":0, "3":0, "4":0, "5":0},
+        //     "user9190": { "money": 100000000, "team":4, "1":0, "2":0, "3":0, "4":0, "5":0},
+        //     "user5265": { "money": 100000000, "team":4, "1":0, "2":0, "3":0, "4":0, "5":0},
+        //     "user9626": { "money": 100000000, "team":4, "1":0, "2":0, "3":0, "4":0, "5":0},
+        //     "user0182": { "money": 100000000, "team":4, "1":0, "2":0, "3":0, "4":0, "5":0},
+        //     "user0292": { "money": 100000000, "team":4, "1":0, "2":0, "3":0, "4":0, "5":0},
+        //     "user5673": { "money": 100000000, "team":5, "1":0, "2":0, "3":0, "4":0, "5":0},
+        //     "user5283": { "money": 100000000, "team":5, "1":0, "2":0, "3":0, "4":0, "5":0},
+        //     "user8416": { "money": 100000000, "team":5, "1":0, "2":0, "3":0, "4":0, "5":0},
+        //     "user0373": { "money": 100000000, "team":5, "1":0, "2":0, "3":0, "4":0, "5":0},
+        //     "user1927": { "money": 100000000, "team":5, "1":0, "2":0, "3":0, "4":0, "5":0},
+        //     "user8172": { "money": 100000000, "team":5, "1":0, "2":0, "3":0, "4":0, "5":0}
+        // }
+
+        // localStorage.userData = JSON.stringify( userData );
+
+
+        link = 'question.html';
+
+        function hrefLink() {
+            // console.log(document.getElementsByClassName("id_data")[0].value);
+            localStorage.id = document.getElementsByClassName("id_data")[0].value;
+            location.href = link;
+        }
+        // function replaceLink() {
+        //     location.replace(link);
+        // }
+
+
+
+    </script>
+</body>
+
+</html>
