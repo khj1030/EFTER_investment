@@ -18,18 +18,18 @@
 
             <div class="col-12">
               <div class="project project1">
-                <div id="title" class="mt-5 font title">OOO</div>
+                <div id="title" class="mt-5 font title"></div>
                 <div id="contents" class="font3 contents">
-                  OOO
+                  
                 </div>
                 <div class="money_data">
                   <div id="text" class="font2 text">현재 투자금액</div>
-                  <div id="money" class="font2 money">0원</div>
+                  <div id="money" class="font2 money"></div>
                 </div>
                 <br>
                 <div class="have_money_data">
                   <div class="font5">보유금액</div>
-                  <div class="font5 have_money">0원</div>
+                  <div class="font5 have_money"></div>
                 </div>
                 <br>
                 <div class="font4">
@@ -104,6 +104,11 @@
             // console.log(document.getElementsByClassName("id_data")[0].value);
             const input_money = document.getElementsByClassName("money_input")[0].value.replaceAll(",", "");
             console.log(input_money);
+
+            if(input_money>userData[id]["money"]){
+              alert("투자금액이 초과되었습니다.");
+              return;
+            }
             userData[id]["money"] = userData[id]["money"] + parseInt(userData[id][item]) - parseInt(input_money);
             userData[id][item] = input_money;
 
