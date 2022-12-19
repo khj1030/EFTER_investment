@@ -43,6 +43,8 @@
             let getAllReq = store.getAll();
             getAllReq.addEventListener('success', function(event){
                 console.log(event.target.result);
+            document.write('변수 내용 쓰기 테스트: ', event.target.result[0].title, '<br />');
+
             });
         ">
         <input type="button" value="update" onclick="
@@ -62,6 +64,18 @@
             deleteReq.addEventListener('success', function(event){
                 console.log(event);
             });
-        ">        
+        ">
+        
+        <!-- <script>
+
+            let store1 = db.transaction('topics', 'readonly').objectStore('topics');            
+            let getAllReq2 = store1.getAll();
+            getAllReq2.addEventListener('success', function(event){
+                console.log(event.target.result);
+            });
+
+            document.write('변수 내용 쓰기 테스트: ', event.target.result, '<br />');
+
+        </script> -->
     </body>
 </html>
