@@ -1,82 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css?ver=1" rel="stylesheet" type="text/css" />
-    <title>EFTER 모의투자</title>
-</head>
-
-<body>
-    <div id="main" class="container1">
-        <div class="row">
-            <div class="col-12">
-                <img class="img-main" src="character/bank.png" width="50%">
-
-                <h1 class="mt-5">로그인</h1>
-                <br>
-                <div class="mt-4">
-                  ID: <br><input type="text" class="id_data">
-                </div>
-                <br>
-                <button type="button" class="btn" onclick="hrefLink()" style="width: 200px;">투자하러 가기</button>
-            </div>
-        </div>
-    </div>
-    <script type="text/javascript">
-
-        var userData = {
-            "user5321": { "money": 100000000, "team":1, "1":0, "2":0, "3":0, "4":0, "5":0},
-            "user1245": { "money": 100000000, "team":1, "1":0, "2":0, "3":0, "4":0, "5":0},
-            "user1928": { "money": 100000000, "team":1, "1":0, "2":0, "3":0, "4":0, "5":0},
-            "user6273": { "money": 100000000, "team":1, "1":0, "2":0, "3":0, "4":0, "5":0},
-            "user1239": { "money": 100000000, "team":1, "1":0, "2":0, "3":0, "4":0, "5":0},
-            "user1029": { "money": 100000000, "team":1, "1":0, "2":0, "3":0, "4":0, "5":0},
-            "user8371": { "money": 100000000, "team":2, "1":0, "2":0, "3":0, "4":0, "5":0},
-            "user1282": { "money": 100000000, "team":2, "1":0, "2":0, "3":0, "4":0, "5":0},
-            "user8192": { "money": 100000000, "team":2, "1":0, "2":0, "3":0, "4":0, "5":0},
-            "user9112": { "money": 100000000, "team":2, "1":0, "2":0, "3":0, "4":0, "5":0},
-            "user1762": { "money": 100000000, "team":2, "1":0, "2":0, "3":0, "4":0, "5":0},
-            "user8132": { "money": 100000000, "team":2, "1":0, "2":0, "3":0, "4":0, "5":0},
-            "user9182": { "money": 100000000, "team":3, "1":0, "2":0, "3":0, "4":0, "5":0},
-            "user1724": { "money": 100000000, "team":3, "1":0, "2":0, "3":0, "4":0, "5":0},
-            "user7361": { "money": 100000000, "team":3, "1":0, "2":0, "3":0, "4":0, "5":0},
-            "user1123": { "money": 100000000, "team":3, "1":0, "2":0, "3":0, "4":0, "5":0},
-            "user1722": { "money": 100000000, "team":3, "1":0, "2":0, "3":0, "4":0, "5":0},
-            "user8100": { "money": 100000000, "team":3, "1":0, "2":0, "3":0, "4":0, "5":0},
-            "user7126": { "money": 100000000, "team":4, "1":0, "2":0, "3":0, "4":0, "5":0},
-            "user9190": { "money": 100000000, "team":4, "1":0, "2":0, "3":0, "4":0, "5":0},
-            "user5265": { "money": 100000000, "team":4, "1":0, "2":0, "3":0, "4":0, "5":0},
-            "user9626": { "money": 100000000, "team":4, "1":0, "2":0, "3":0, "4":0, "5":0},
-            "user0182": { "money": 100000000, "team":4, "1":0, "2":0, "3":0, "4":0, "5":0},
-            "user0292": { "money": 100000000, "team":4, "1":0, "2":0, "3":0, "4":0, "5":0},
-            "user5673": { "money": 100000000, "team":5, "1":0, "2":0, "3":0, "4":0, "5":0},
-            "user5283": { "money": 100000000, "team":5, "1":0, "2":0, "3":0, "4":0, "5":0},
-            "user8416": { "money": 100000000, "team":5, "1":0, "2":0, "3":0, "4":0, "5":0},
-            "user0373": { "money": 100000000, "team":5, "1":0, "2":0, "3":0, "4":0, "5":0},
-            "user1927": { "money": 100000000, "team":5, "1":0, "2":0, "3":0, "4":0, "5":0},
-            "user8172": { "money": 100000000, "team":5, "1":0, "2":0, "3":0, "4":0, "5":0}
-        }
-
-        localStorage.userData = JSON.stringify( userData );
-
-
-        link = 'question.html';
-
-        function hrefLink() {
-            // console.log(document.getElementsByClassName("id_data")[0].value);
-            localStorage.id = document.getElementsByClassName("id_data")[0].value;
-            location.href = link;
-        }
-        // function replaceLink() {
-        //     location.replace(link);
-        // }
-
-
-
-    </script>
-</body>
-
+<html>
+    <body>
+        <script>
+            const dbReq = indexedDB.open('opentutorials',1);
+            let db;
+            dbReq.addEventListener('success', function(event){
+                db = event.target.result;
+            });
+            dbReq.addEventListener('error', function(event){
+                const error = event.target.error; 
+                console.log('error', error.name);
+            });            
+            dbReq.addEventListener('upgradeneeded', function(event){
+                db = event.target.result;  
+                let oldVersion = event.oldVersion;
+                if(oldVersion < 1){
+                    db.createObjectStore('topics', {keyPath:'id', autoIncrement:true});
+                } 
+            });
+        </script>
+        
+        <input type="button" value="add" onclick="
+            let store = db.transaction('topics', 'readwrite').objectStore('topics');
+            let addReq = store.add({
+                title:prompt('title?'),
+                body:prompt('body?')
+            });
+            addReq.addEventListener('success', function(event){
+                console.log(event);
+            });
+        ">
+        <input type="button" value="get" onclick="
+            let id = Number(prompt('?id'));
+            let store = db.transaction('topics', 'readonly').objectStore('topics');            
+            let getReq = store.get(id);
+            getReq.addEventListener('success', function(event){
+                console.log(event.target.result);
+            });
+        ">
+        <input type="button" value="list" onclick="
+            let store = db.transaction('topics', 'readonly').objectStore('topics');            
+            let getAllReq = store.getAll();
+            getAllReq.addEventListener('success', function(event){
+                console.log(event.target.result);
+            });
+        ">
+        <input type="button" value="update" onclick="
+            let store = db.transaction('topics', 'readwrite').objectStore('topics');
+            let putReq = store.put({
+                id:Number(prompt('id?')),
+                title:prompt('title?'),
+                body:prompt('body?')
+            });
+            putReq.addEventListener('success',function(event){
+                console.log(event);
+            });
+        ">
+        <input type="button" value="delete" onclick="
+            let store = db.transaction('topics', 'readwrite').objectStore('topics');
+            let deleteReq = store.delete(Number(prompt('id?')));
+            deleteReq.addEventListener('success', function(event){
+                console.log(event);
+            });
+        ">        
+    </body>
 </html>
